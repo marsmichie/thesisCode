@@ -68,15 +68,7 @@ def main(argv):
                 ax2.set_title('grad $u(x)$')
         else:
             continue
-    if numerov:
-        data = pd.read_csv('/home/archmichi/Documents/A_paul_temp/FSDE/numerov_comparison/Numerov/numerov_d_u.txt', sep=" ", header=None)
-        data.columns = ["u"]
-        uh = data.u
-        data = pd.read_csv('/home/archmichi/Documents/A_paul_temp/FSDE/numerov_comparison/Numerov/numerov_d.txt', sep=" ", header=None)
-        data.columns = ["x","psi","psi**2"]
-        ax2.plot(data.x[:-2],data.psi[:-2],label='numerov')
-        ax1.plot(data.x[:-2],uh[:-2],label='numerov')
-    
+
     if file_filter == "spin_fb.txt":
         plt.legend(title="", fancybox=True)
     else:
